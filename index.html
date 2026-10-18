@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Color Gems: Mix gems, not water!</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,700&family=Nunito:wght@600;800&display=swap">
+<style>
+:root{--bg:#f3edfc;--fg:#2b2350;--muted:#5b5478;--card:#ffffff;--line:#ddd3f3;--accent:#7a3fc4;--sel:#efe4ff;--glow:rgba(122,63,196,.35);box-sizing:border-box}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1b1736;--fg:#fbf7ef;--muted:#c9c2e6;--card:#2a2450;--line:#4a4378;--accent:#b99af0;--sel:#3d3470;--glow:rgba(185,154,240,.45)}}
+:root[data-theme="dark"]{--bg:#1b1736;--fg:#fbf7ef;--muted:#c9c2e6;--card:#2a2450;--line:#4a4378;--accent:#b99af0;--sel:#3d3470;--glow:rgba(185,154,240,.45)}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;background:var(--bg);color:var(--fg);font-family:Nunito,"Trebuchet MS",Arial,sans-serif;font-weight:600;font-size:16px}
+#app{height:100%;max-width:480px;margin:0 auto;display:flex;flex-direction:column;gap:8px;padding:calc(8px + env(safe-area-inset-top,0px)) 12px calc(10px + env(safe-area-inset-bottom,0px))}
+.top{display:flex;align-items:center;justify-content:space-between;gap:8px}
+h1{font:italic 700 27px/1.1 Lora,Georgia,serif;margin:0;white-space:nowrap;background:linear-gradient(90deg,#c2185b,#7a3fc4,#2457c5,#0f8a5f);-webkit-background-clip:text;background-clip:text;color:transparent}
+.nav{display:flex;gap:8px}.nav .btn{padding:8px 12px;font-size:15px;white-space:nowrap}
+button{font-family:Nunito,Arial,sans-serif;touch-action:manipulation;cursor:pointer}
+.btn{min-height:48px;padding:8px 16px;font-weight:800;font-size:16px;color:#fff;background:linear-gradient(90deg,#7a3fc4,#2457c5);border:0;border-radius:14px}
+.btn.ghost{color:var(--fg);background:var(--card);border:2px solid var(--line)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:10px 12px}
+.status{display:flex;align-items:center;gap:10px;min-height:64px}
+.status .t{flex:1;min-width:0}
+#gt{font:italic 700 24px/1.1 Lora,Georgia,serif}#chk{font-size:16px;color:var(--muted);line-height:1.25;margin-top:2px}#chk.win{color:#0f8a5f;font-weight:800}
+#mg:empty{display:none}
+.stage{position:relative;flex:1;min-height:0;background:radial-gradient(circle at 50% 35%,var(--card),var(--sel));border:1px solid var(--line);border-radius:22px;padding:4px}
+.stage svg{display:block;width:100%;height:100%;touch-action:manipulation}
+.ts{font:12px Nunito,Arial,sans-serif}.th{font:800 15px Nunito,Arial,sans-serif}
+#tiles{display:grid;grid-template-columns:repeat(5,1fr);gap:6px}
+.tile{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;padding:6px 2px;min-height:80px;font-weight:800;font-size:14px;color:var(--fg);background:var(--card);border:2px solid var(--line);border-radius:14px;transition:transform .15s,box-shadow .15s}
+.tile.on{border-color:var(--accent);background:var(--sel);box-shadow:0 0 0 4px var(--glow);transform:translateY(-3px)}
+.out{display:flex;align-items:center;gap:12px;min-height:100px}
+#ric{flex:none;width:76px;height:76px}.out .t{flex:1;min-width:0}
+#res{font:italic 700 clamp(26px,8.5vw,34px)/1.05 Lora,Georgia,serif;text-transform:uppercase;letter-spacing:.02em}#rec{font-size:17px;font-weight:800;color:var(--accent);margin-top:3px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}#hint{font-size:15px;color:var(--muted);line-height:1.25;margin-top:2px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+#rs{position:absolute;right:8px;top:8px;z-index:2;min-height:44px;padding:6px 14px;font-size:15px}#ric svg{width:100%;height:100%}.pop{animation:pop .5s ease}@keyframes pop{0%{transform:scale(.85)}60%{transform:scale(1.1)}100%{transform:scale(1)}}
+@media (prefers-reduced-motion:reduce){.pop{animation:none}.tile{transition:none}}
+@media (max-height:720px){#app{gap:6px}.status{min-height:54px}#gt{font-size:20px}#chk{font-size:15px}.tile{min-height:66px}.tile svg{width:30px;height:30px}.out{min-height:86px}#ric{width:58px;height:58px}#res{font-size:28px}#hint{font-size:14px;-webkit-line-clamp:2}#rec{font-size:15px;line-height:1.2}}
+@media (max-width:380px){h1{font-size:24px}.nav{gap:6px}.nav .btn{padding:8px 10px}}
+.foot{margin:18px 0 0;text-align:center;font-size:15px;color:var(--muted)}
+.sheet{position:fixed;inset:0;z-index:10;background:var(--bg);overflow:auto;padding:calc(12px + env(safe-area-inset-top,0px)) 14px calc(24px + env(safe-area-inset-bottom,0px))}
+.sheet[hidden]{display:none}
+.sheet>div.in{max-width:480px;margin:0 auto}
+.sh{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+h2{font:italic 700 28px Lora,Georgia,serif;margin:0}
+.gm{display:block;width:100%;text-align:left;margin-bottom:10px;padding:14px 16px;color:var(--fg);background:var(--card);border:2px solid var(--line);border-radius:18px}
+.gm b{display:block;font:italic 700 22px Lora,Georgia,serif}.gm span{font-size:16px;color:var(--muted)}
+.gm.on{border-color:var(--accent);background:var(--sel)}
+#col{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:10px 0}
+.chip{display:flex;align-items:center;gap:10px;font-size:17px;font-weight:800;padding:10px 12px;border:2px dashed var(--line);border-radius:14px;color:var(--muted);min-height:56px}
+.chip.got{border:2px solid var(--line);color:var(--fg);background:var(--sel)}
+#aw{display:flex;flex-wrap:wrap;gap:8px}
+.aw{font-size:16px;font-weight:800;padding:10px 14px;border-radius:999px;border:2px dashed var(--line);color:var(--muted)}
+.aw.got{border:2px solid var(--accent);color:var(--fg);background:var(--sel)}
+</style>
+</head>
+<body>
+<div id="app">
+<div class="top"><h1>Color Gems</h1><div class="nav"><button class="btn ghost" id="bg">Games</button><button class="btn ghost" id="bc">Gems <span id="cntb">0/15</span></button></div></div>
+<div class="card status"><div id="mg"></div><div class="t"><div id="gt"></div><div id="chk"></div></div><button class="btn" id="gb">Start</button></div>
+<div class="stage"><button class="btn ghost" id="rs">Clear</button>
+<svg viewBox="0 0 380 470" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Round Color Gems device with five gem tabs and a mixing window">
+<polygon points="166,16 177,2 203,2 214,16 190,44" fill="#cfc3f2" stroke="#7a3fc4" stroke-width="1"/>
+<polygon points="177,2 190,16 203,2" fill="#efe9fc"/><polygon points="190,16 214,16 190,44" fill="#a592e0"/>
+<path d="M150 380 L112 440 L268 440 L230 380 Z" fill="#f1efe8" stroke="#cfcbbd" stroke-width="0.75"/>
+<rect x="56" y="440" width="268" height="18" rx="6" fill="#ffffff" stroke="#cfcbbd" stroke-width="0.75"/>
+<text class="ts" x="190" y="453" text-anchor="middle" fill="#5f5e5a">Mix gems, not water!</text>
+<circle cx="190" cy="157" r="35" fill="#ffffff"/>
+<g id="wins" style="isolation:isolate"></g><g id="milk"></g>
+<path fill-rule="evenodd" fill="#fbfaf6" stroke="#cfcbbd" stroke-width="0.75" d="M40 245a150 150 0 1 0 300 0a150 150 0 1 0 -300 0ZM155 157a35 35 0 1 0 70 0a35 35 0 1 0 -70 0Z"/>
+<circle cx="190" cy="245" r="132" fill="none" stroke="#ece9de"/>
+<circle cx="190" cy="157" r="38" fill="none" stroke="#e0ddd0" stroke-width="3"/>
+<circle cx="190" cy="157" r="35" fill="none" stroke="#b4b2a9" stroke-width="0.75"/>
+<circle cx="190" cy="245" r="159" fill="none" stroke="#bcd7e6" stroke-width="16" opacity="0.55" style="pointer-events:none"/>
+<text class="th" x="190" y="262" text-anchor="middle" fill="#444441">Color Gems</text>
+<text class="ts" x="190" y="282" text-anchor="middle" fill="#5f5e5a">mixing window</text>
+<circle cx="190" cy="245" r="7" fill="#b4b2a9" stroke="#888780" stroke-width="0.5"/>
+<g id="tabs"></g>
+</svg>
+</div>
+<div id="tiles"></div>
+<div class="card out"><div id="ric"></div><div class="t"><div id="res">Tap a gem</div><div id="rec"></div><div id="hint">Pick two gems to make a new one!</div></div></div>
+</div>
+<div class="sheet" id="sg" hidden><div class="in"><div class="sh"><h2>Games</h2><button class="btn ghost close">Close</button></div>
+<button class="gm" data-m="free"><b>Free mixing</b><span>Mix any gems you like.</span></button>
+<button class="gm" data-m="ch"><b>Challenge</b><span>We name a gem. You mix it.</span></button>
+<button class="gm" data-m="my"><b>Mystery</b><span>We show a color. Guess the gems.</span></button>
+<button class="gm" data-m="tp"><b>Two players</b><span>Hide a gem, pass the phone, guess it.</span></button>
+<p class="foot">A Young Entrepreneurs project</p></div></div>
+<div class="sheet" id="sc" hidden><div class="in"><div class="sh"><h2>My gems <span id="cnt"></span></h2><button class="btn ghost close">Close</button></div>
+<div id="col"></div><div id="aw"></div></div></div>
+<script>
+var NS='http://www.w3.org/2000/svg',CX=190,CY=245,OR=88,DR=40;
+var cols=[
+{id:'r',name:'Ruby',rgb:[250,105,100],slot:-140},
+{id:'y',name:'Citrine',rgb:[255,230,70],slot:-100},
+{id:'b',name:'Sapphire',rgb:[90,140,250],slot:-60},
+{id:'g',name:'Emerald',rgb:[90,205,125],slot:60},
+{id:'m',name:'Diamond',rgb:[235,242,250],slot:100,milk:true}];
+var names={r:'Ruby',y:'Citrine',b:'Sapphire',g:'Emerald',ry:'Amber',br:'Amethyst',by:'Jade',gr:'Smoky quartz',gy:'Peridot',bg:'Aquamarine',bry:'Smoky quartz',gry:"Tiger's eye",bgr:'Hematite',bgy:'Dark emerald',bgry:'Onyx'};
+function sh(c,f){return c.map(function(v){return Math.round(f>0?v+(255-v)*f:v*(1+f));});}
+function gem(c,s){return '<svg width="'+s+'" height="'+s+'" viewBox="0 0 64 64" aria-hidden="true"><polygon points="8,22 18,8 46,8 56,22 32,58" fill="rgb('+c+')"/><polygon points="8,22 32,22 32,58" fill="rgb('+sh(c,-.12)+')"/><polygon points="56,22 32,22 32,58" fill="rgb('+sh(c,-.28)+')"/><polygon points="18,8 46,8 32,22" fill="rgb('+sh(c,.5)+')"/><polygon points="8,22 18,8 32,22" fill="rgb('+sh(c,.25)+')"/><polygon points="8,22 18,8 46,8 56,22 32,58" fill="none" stroke="rgba(0,0,0,.28)" stroke-width="1.5" stroke-linejoin="round"/></svg>';}
+function mix(list,milk){var c=[255,255,255];list.forEach(function(x){c=c.map(function(v,i){return v*x.rgb[i]/255;});});if(milk)c=c.map(function(v){return v+(255-v)*.45;});return c.map(Math.round);}
+function el(t,a,p){var e=document.createElementNS(NS,t);for(var k in a)e.setAttribute(k,a[k]);p.appendChild(e);return e;}
+var wins=document.getElementById('wins'),milk=document.getElementById('milk'),tabs=document.getElementById('tabs'),tiles=document.getElementById('tiles');
+cols.forEach(function(c,i){
+c.ang=c.slot;c.on=false;var rgb='rgb('+c.rgb.join(',')+')';
+if(c.milk){c.dot=el('circle',{r:DR,fill:'#ffffff','fill-opacity':'0.6'},milk);}
+else{c.dot=el('circle',{r:DR,fill:rgb},wins);c.dot.style.mixBlendMode='multiply';}
+c.g=el('g',{style:'cursor:pointer'},tabs);
+el('rect',{x:-6,y:-166,width:12,height:22,fill:'#fff',stroke:'#cfcbbd','stroke-width':'0.75'},c.g);
+el('polygon',{points:'-15,-178 -8,-190 8,-190 15,-178 0,-158',fill:rgb,stroke:'#6b6860','stroke-width':'0.75'},c.g);
+el('polygon',{points:'-8,-190 8,-190 4,-180 -4,-180',fill:'rgba(255,255,255,.55)'},c.g);
+c.g.addEventListener('click',function(){toggle(i);});
+var b=document.createElement('button');b.className='tile';b.innerHTML=gem(c.rgb,38)+'<span>'+c.name+'</span>';b.onclick=function(){toggle(i);};c.btn=b;tiles.appendChild(b);
+});
+function draw(){cols.forEach(function(c){var a=c.ang*Math.PI/180;
+c.dot.setAttribute('cx',CX+OR*Math.sin(a));c.dot.setAttribute('cy',CY-OR*Math.cos(a));
+c.g.setAttribute('transform','translate('+CX+','+CY+') rotate('+c.ang+')');});}
+var raf=null;
+function tick(){var busy=false;cols.forEach(function(c){var t=c.on?0:c.slot,d=t-c.ang;if(Math.abs(d)>.2){c.ang+=d*.16;busy=true;}else c.ang=t;});draw();raf=busy?requestAnimationFrame(tick):null;}
+function go(){if(!raf)raf=requestAnimationFrame(tick);}
+var keys=['r','y','b','g','ry','br','by','gr','gy','bg','bry','gry','bgr','bgy','bgry'];
+function colorsOf(k){return cols.filter(function(c){return k.indexOf(c.id)>-1&&!c.milk;});}
+var got={};try{(JSON.parse(localStorage.getItem('cg-found')||'[]')).forEach(function(k){got[k]=1;});}catch(e){}
+var mode='free',target=null,solved=false,secret=null,phase='hide',tries=0;
+function renderCol(){var h='',n=0;keys.forEach(function(k){if(got[k]){n++;h+='<div class="chip got">'+gem(mix(colorsOf(k)),32)+names[k]+'</div>';}else h+='<div class="chip">? ? ?</div>';});
+document.getElementById('col').innerHTML=h;document.getElementById('cnt').textContent=n+' / 15';document.getElementById('cntb').textContent=n+'/15';
+var A=[[3,'Gem Finder'],[8,'Gem Explorer'],[15,'Master Jeweler']];document.getElementById('aw').innerHTML=A.map(function(a){return '<span class="aw'+(n>=a[0]?' got':'')+'">'+(n>=a[0]?'\u2605 ':'')+a[1]+' ('+a[0]+')</span>';}).join('');}
+function toggle(i){var c=cols[i];c.on=!c.on;c.btn.className='tile'+(c.on?' on':'');update();go();}
+function curKey(){return cols.filter(function(c){return c.on&&!c.milk;}).map(function(c){return c.id;}).sort().join('');}
+function update(){
+var on=cols.filter(function(c){return c.on&&!c.milk;}),m=cols.some(function(c){return c.on&&c.milk;});
+var ric=document.getElementById('ric'),res=document.getElementById('res'),hint=document.getElementById('hint'),rec=document.getElementById('rec');
+if(!on.length){ric.innerHTML=gem(m?[235,242,250]:[225,220,235],76);res.textContent=m?'Diamond':'Tap a gem';rec.textContent='';hint.textContent=m?'It only makes other colors lighter.':'Pick two gems to make a new one!';return;}
+var key=curKey();
+ric.innerHTML=gem(mix(on,m),76);ric.className='pop';setTimeout(function(){ric.className='';},520);
+res.textContent=names[key];rec.textContent=(on.length>1||m?on.map(function(c){return c.name;}).join(' + ')+(m?' + Diamond (lighter)':''):'A pure gem color');
+var n=on.length;
+hint.textContent=m&&n<3?'The Diamond makes colors lighter.':n===1?'One layer shows a pure color.':n===2?'Two gems made a new gem!':n===3?'Three layers: each one lets less light through.':m?'Four layers block almost all light. The Diamond makes it lighter.':'Four layers block almost all light. Add the Diamond.';
+if(!got[key]){got[key]=1;try{localStorage.setItem('cg-found',JSON.stringify(Object.keys(got)));}catch(e){}renderCol();}
+if(mode==='ch'&&target){if(key===target)say('Yes! You made '+names[target]+'!',true);else say('Keep mixing...');}
+}
+function resetGems(){cols.forEach(function(c){c.on=false;c.btn.className='tile';});update();go();}
+function say(t,w){var k=document.getElementById('chk');k.className=w?'win':'';k.textContent=t;}
+function pick(){var pool=keys.filter(function(k){return k.length>1&&k!==target;});target=pool[Math.floor(Math.random()*pool.length)];solved=false;}
+function setMode(m){mode=m;target=null;solved=false;secret=null;phase='hide';tries=0;
+[].forEach.call(document.querySelectorAll('.gm'),function(b){b.className='gm'+(b.getAttribute('data-m')===m?' on':'');});
+var gt=document.getElementById('gt'),gb=document.getElementById('gb');document.getElementById('mg').innerHTML='';gb.style.display='';
+if(m==='free'){gt.textContent='Free mixing';say('Tap gems to mix them.');gb.style.display='none';}
+if(m==='ch'){gt.textContent='Challenge';say('Tap Start to get a gem to make.');gb.textContent='Start';}
+if(m==='my'){gt.textContent='Mystery color';say('Tap Start to see a mystery color.');gb.textContent='Start';}
+if(m==='tp'){gt.textContent='Two players';say('Player 1: mix a gem in secret, then tap Hide.');gb.textContent='Hide';}}
+document.getElementById('gb').onclick=function(){
+var gt=document.getElementById('gt'),mg=document.getElementById('mg');
+if(mode==='ch'){pick();gt.textContent='Make '+names[target];say('Mix it in the window.');this.textContent='Next';update();}
+else if(mode==='my'){
+if(!target||solved){pick();mg.innerHTML=gem(mix(colorsOf(target)),52);gt.textContent='What gem is this?';say('Mix it, then tap Check.');this.textContent='Check';resetGems();}
+else if(curKey()===target){solved=true;say('Yes! It is '+names[target]+'!',true);this.textContent='Next';}
+else say('Not yet. Try again!');}
+else if(mode==='tp'){
+if(phase==='hide'){var k=curKey();if(!k){say('Pick at least one gem first.');return;}secret=k;phase='guess';tries=0;resetGems();gt.textContent="Player 2's turn";say('Pass the phone. Mix the hidden gem, then tap Check.');this.textContent='Check';}
+else if(curKey()===secret){say('Correct'+(tries?' after '+tries+' wrong '+(tries===1?'try':'tries'):' on the first try')+'! It was '+names[secret]+'. Swap roles!',true);phase='hide';secret=null;gt.textContent='Two players';this.textContent='Hide';}
+else{tries++;say('Not it. Try again! Wrong tries: '+tries);}}
+};
+function open(id){document.getElementById(id).hidden=false;}
+function closeAll(){document.getElementById('sg').hidden=true;document.getElementById('sc').hidden=true;}
+document.getElementById('bg').onclick=function(){open('sg');};
+document.getElementById('bc').onclick=function(){open('sc');};
+[].forEach.call(document.querySelectorAll('.close'),function(b){b.onclick=closeAll;});
+[].forEach.call(document.querySelectorAll('.gm'),function(b){b.onclick=function(){setMode(b.getAttribute('data-m'));resetGems();closeAll();};});
+document.getElementById('rs').onclick=resetGems;
+renderCol();draw();update();setMode('free');
+</script>
+</body>
+</html>

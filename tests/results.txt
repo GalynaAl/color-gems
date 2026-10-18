@@ -1,0 +1,201 @@
+PASS 360x640 light: no page scroll (start)  [{"sw":360,"sh":640,"w":360,"h":640}]
+PASS 360x640 light: header on one line  [{"oneLine":true,"fit":true}]
+PASS 360x640 light: touch targets >= 44px
+PASS 360x640 light: Ruby+Citrine = AMBER  [AMBER]
+PASS 360x640 light: formula "Ruby + Citrine"  [Ruby + Citrine]
+PASS 360x640 light: +Sapphire = SMOKY QUARTZ  [SMOKY QUARTZ]
+PASS 360x640 light: "Smoky quartz" fits result card
+PASS 360x640 light: all four + Diamond = ONYX  [ONYX]
+PASS 360x640 light: Diamond hint  [Four layers block almost all light. The Diamond makes it lighter.]
+PASS 360x640 light: Diamond formula  [Ruby + Citrine + Sapphire + Emerald + Diamond (lighter)]
+PASS 360x640 light: formula fits result card
+PASS 360x640 light: no page scroll (5 gems)  [{"sw":360,"sh":640,"w":360,"h":640}]
+PASS 360x640 light: Clear resets  [TAP A GEM]
+PASS 360x640 light: Dark emerald  [DARK EMERALD]
+PASS 360x640 light: "Dark emerald" fits result card
+PASS 360x640 light: "Dark emerald" + Diamond formula fits
+PASS 360x640 light: collection counter matches found gems  [7/15 found=7]
+PASS 360x640 light: Gem Finder award earned  [★ Gem Finder (3)]
+PASS 360x640 light: Challenge gives a target  [Make Smoky quartz]
+PASS 360x640 light: Challenge success message  [Yes! You made Smoky quartz!]
+PASS 360x640 light: no page scroll (challenge)  [{"sw":360,"sh":640,"w":360,"h":640}]
+PASS 360x640 light: Mystery shows a color
+PASS 360x640 light: Mystery wrong Check says "Not yet"  [Not yet. Try again!]
+PASS 360x640 light: Mystery right Check succeeds  [Yes! It is Onyx!]
+PASS 360x640 light: no page scroll (mystery)  [{"sw":360,"sh":640,"w":360,"h":640}]
+PASS 360x640 light: Hide with nothing asks to pick  [Pick at least one gem first.]
+PASS 360x640 light: Hide clears the window
+PASS 360x640 light: wrong guess counts a try  [Not it. Try again! Wrong tries: 1]
+PASS 360x640 light: correct guess reports tries  [Correct after 1 wrong try! It was Aquamarine. Swap roles!]
+PASS 360x640 light: no page scroll (two players)  [{"sw":360,"sh":640,"w":360,"h":640}]
+PASS 360x640 light: 15/15 collected  [15/15]
+PASS 360x640 light: all awards + saved after reload  [★ Gem Finder (3)|★ Gem Explorer (8)|★ Master Jeweler (15)]
+PASS 360x640 light: no JS errors
+PASS 360x640 dark: no page scroll (start)  [{"sw":360,"sh":640,"w":360,"h":640}]
+PASS 360x640 dark: header on one line  [{"oneLine":true,"fit":true}]
+PASS 360x640 dark: touch targets >= 44px
+PASS 360x640 dark: Ruby+Citrine = AMBER  [AMBER]
+PASS 360x640 dark: formula "Ruby + Citrine"  [Ruby + Citrine]
+PASS 360x640 dark: +Sapphire = SMOKY QUARTZ  [SMOKY QUARTZ]
+PASS 360x640 dark: "Smoky quartz" fits result card
+PASS 360x640 dark: all four + Diamond = ONYX  [ONYX]
+PASS 360x640 dark: Diamond hint  [Four layers block almost all light. The Diamond makes it lighter.]
+PASS 360x640 dark: Diamond formula  [Ruby + Citrine + Sapphire + Emerald + Diamond (lighter)]
+PASS 360x640 dark: formula fits result card
+PASS 360x640 dark: no page scroll (5 gems)  [{"sw":360,"sh":640,"w":360,"h":640}]
+PASS 360x640 dark: Clear resets  [TAP A GEM]
+PASS 360x640 dark: Dark emerald  [DARK EMERALD]
+PASS 360x640 dark: "Dark emerald" fits result card
+PASS 360x640 dark: "Dark emerald" + Diamond formula fits
+PASS 360x640 dark: collection counter matches found gems  [7/15 found=7]
+PASS 360x640 dark: Gem Finder award earned  [★ Gem Finder (3)]
+PASS 360x640 dark: Challenge gives a target  [Make Tiger's eye]
+PASS 360x640 dark: Challenge success message  [Yes! You made Tiger's eye!]
+PASS 360x640 dark: no page scroll (challenge)  [{"sw":360,"sh":640,"w":360,"h":640}]
+PASS 360x640 dark: Mystery shows a color
+PASS 360x640 dark: Mystery wrong Check says "Not yet"  [Not yet. Try again!]
+PASS 360x640 dark: Mystery right Check succeeds  [Yes! It is Aquamarine!]
+PASS 360x640 dark: no page scroll (mystery)  [{"sw":360,"sh":640,"w":360,"h":640}]
+PASS 360x640 dark: Hide with nothing asks to pick  [Pick at least one gem first.]
+PASS 360x640 dark: Hide clears the window
+PASS 360x640 dark: wrong guess counts a try  [Not it. Try again! Wrong tries: 1]
+PASS 360x640 dark: correct guess reports tries  [Correct after 1 wrong try! It was Aquamarine. Swap roles!]
+PASS 360x640 dark: no page scroll (two players)  [{"sw":360,"sh":640,"w":360,"h":640}]
+PASS 360x640 dark: 15/15 collected  [15/15]
+PASS 360x640 dark: all awards + saved after reload  [★ Gem Finder (3)|★ Gem Explorer (8)|★ Master Jeweler (15)]
+PASS 360x640 dark: no JS errors
+PASS 390x700 light: no page scroll (start)  [{"sw":390,"sh":700,"w":390,"h":700}]
+PASS 390x700 light: header on one line  [{"oneLine":true,"fit":true}]
+PASS 390x700 light: touch targets >= 44px
+PASS 390x700 light: Ruby+Citrine = AMBER  [AMBER]
+PASS 390x700 light: formula "Ruby + Citrine"  [Ruby + Citrine]
+PASS 390x700 light: +Sapphire = SMOKY QUARTZ  [SMOKY QUARTZ]
+PASS 390x700 light: "Smoky quartz" fits result card
+PASS 390x700 light: all four + Diamond = ONYX  [ONYX]
+PASS 390x700 light: Diamond hint  [Four layers block almost all light. The Diamond makes it lighter.]
+PASS 390x700 light: Diamond formula  [Ruby + Citrine + Sapphire + Emerald + Diamond (lighter)]
+PASS 390x700 light: formula fits result card
+PASS 390x700 light: no page scroll (5 gems)  [{"sw":390,"sh":700,"w":390,"h":700}]
+PASS 390x700 light: Clear resets  [TAP A GEM]
+PASS 390x700 light: Dark emerald  [DARK EMERALD]
+PASS 390x700 light: "Dark emerald" fits result card
+PASS 390x700 light: "Dark emerald" + Diamond formula fits
+PASS 390x700 light: collection counter matches found gems  [7/15 found=7]
+PASS 390x700 light: Gem Finder award earned  [★ Gem Finder (3)]
+PASS 390x700 light: Challenge gives a target  [Make Smoky quartz]
+PASS 390x700 light: Challenge success message  [Yes! You made Smoky quartz!]
+PASS 390x700 light: no page scroll (challenge)  [{"sw":390,"sh":700,"w":390,"h":700}]
+PASS 390x700 light: Mystery shows a color
+PASS 390x700 light: Mystery wrong Check says "Not yet"  [Not yet. Try again!]
+PASS 390x700 light: Mystery right Check succeeds  [Yes! It is Smoky quartz!]
+PASS 390x700 light: no page scroll (mystery)  [{"sw":390,"sh":700,"w":390,"h":700}]
+PASS 390x700 light: Hide with nothing asks to pick  [Pick at least one gem first.]
+PASS 390x700 light: Hide clears the window
+PASS 390x700 light: wrong guess counts a try  [Not it. Try again! Wrong tries: 1]
+PASS 390x700 light: correct guess reports tries  [Correct after 1 wrong try! It was Aquamarine. Swap roles!]
+PASS 390x700 light: no page scroll (two players)  [{"sw":390,"sh":700,"w":390,"h":700}]
+PASS 390x700 light: 15/15 collected  [15/15]
+PASS 390x700 light: all awards + saved after reload  [★ Gem Finder (3)|★ Gem Explorer (8)|★ Master Jeweler (15)]
+PASS 390x700 light: no JS errors
+PASS 390x700 dark: no page scroll (start)  [{"sw":390,"sh":700,"w":390,"h":700}]
+PASS 390x700 dark: header on one line  [{"oneLine":true,"fit":true}]
+PASS 390x700 dark: touch targets >= 44px
+PASS 390x700 dark: Ruby+Citrine = AMBER  [AMBER]
+PASS 390x700 dark: formula "Ruby + Citrine"  [Ruby + Citrine]
+PASS 390x700 dark: +Sapphire = SMOKY QUARTZ  [SMOKY QUARTZ]
+PASS 390x700 dark: "Smoky quartz" fits result card
+PASS 390x700 dark: all four + Diamond = ONYX  [ONYX]
+PASS 390x700 dark: Diamond hint  [Four layers block almost all light. The Diamond makes it lighter.]
+PASS 390x700 dark: Diamond formula  [Ruby + Citrine + Sapphire + Emerald + Diamond (lighter)]
+PASS 390x700 dark: formula fits result card
+PASS 390x700 dark: no page scroll (5 gems)  [{"sw":390,"sh":700,"w":390,"h":700}]
+PASS 390x700 dark: Clear resets  [TAP A GEM]
+PASS 390x700 dark: Dark emerald  [DARK EMERALD]
+PASS 390x700 dark: "Dark emerald" fits result card
+PASS 390x700 dark: "Dark emerald" + Diamond formula fits
+PASS 390x700 dark: collection counter matches found gems  [7/15 found=7]
+PASS 390x700 dark: Gem Finder award earned  [★ Gem Finder (3)]
+PASS 390x700 dark: Challenge gives a target  [Make Aquamarine]
+PASS 390x700 dark: Challenge success message  [Yes! You made Aquamarine!]
+PASS 390x700 dark: no page scroll (challenge)  [{"sw":390,"sh":700,"w":390,"h":700}]
+PASS 390x700 dark: Mystery shows a color
+PASS 390x700 dark: Mystery wrong Check says "Not yet"  [Not yet. Try again!]
+PASS 390x700 dark: Mystery right Check succeeds  [Yes! It is Smoky quartz!]
+PASS 390x700 dark: no page scroll (mystery)  [{"sw":390,"sh":700,"w":390,"h":700}]
+PASS 390x700 dark: Hide with nothing asks to pick  [Pick at least one gem first.]
+PASS 390x700 dark: Hide clears the window
+PASS 390x700 dark: wrong guess counts a try  [Not it. Try again! Wrong tries: 1]
+PASS 390x700 dark: correct guess reports tries  [Correct after 1 wrong try! It was Aquamarine. Swap roles!]
+PASS 390x700 dark: no page scroll (two players)  [{"sw":390,"sh":700,"w":390,"h":700}]
+PASS 390x700 dark: 15/15 collected  [15/15]
+PASS 390x700 dark: all awards + saved after reload  [★ Gem Finder (3)|★ Gem Explorer (8)|★ Master Jeweler (15)]
+PASS 390x700 dark: no JS errors
+PASS 430x860 light: no page scroll (start)  [{"sw":430,"sh":860,"w":430,"h":860}]
+PASS 430x860 light: header on one line  [{"oneLine":true,"fit":true}]
+PASS 430x860 light: touch targets >= 44px
+PASS 430x860 light: Ruby+Citrine = AMBER  [AMBER]
+PASS 430x860 light: formula "Ruby + Citrine"  [Ruby + Citrine]
+PASS 430x860 light: +Sapphire = SMOKY QUARTZ  [SMOKY QUARTZ]
+PASS 430x860 light: "Smoky quartz" fits result card
+PASS 430x860 light: all four + Diamond = ONYX  [ONYX]
+PASS 430x860 light: Diamond hint  [Four layers block almost all light. The Diamond makes it lighter.]
+PASS 430x860 light: Diamond formula  [Ruby + Citrine + Sapphire + Emerald + Diamond (lighter)]
+PASS 430x860 light: formula fits result card
+PASS 430x860 light: no page scroll (5 gems)  [{"sw":430,"sh":860,"w":430,"h":860}]
+PASS 430x860 light: Clear resets  [TAP A GEM]
+PASS 430x860 light: Dark emerald  [DARK EMERALD]
+PASS 430x860 light: "Dark emerald" fits result card
+PASS 430x860 light: "Dark emerald" + Diamond formula fits
+PASS 430x860 light: collection counter matches found gems  [7/15 found=7]
+PASS 430x860 light: Gem Finder award earned  [★ Gem Finder (3)]
+PASS 430x860 light: Challenge gives a target  [Make Jade]
+PASS 430x860 light: Challenge success message  [Yes! You made Jade!]
+PASS 430x860 light: no page scroll (challenge)  [{"sw":430,"sh":860,"w":430,"h":860}]
+PASS 430x860 light: Mystery shows a color
+PASS 430x860 light: Mystery wrong Check says "Not yet"  [Not yet. Try again!]
+PASS 430x860 light: Mystery right Check succeeds  [Yes! It is Smoky quartz!]
+PASS 430x860 light: no page scroll (mystery)  [{"sw":430,"sh":860,"w":430,"h":860}]
+PASS 430x860 light: Hide with nothing asks to pick  [Pick at least one gem first.]
+PASS 430x860 light: Hide clears the window
+PASS 430x860 light: wrong guess counts a try  [Not it. Try again! Wrong tries: 1]
+PASS 430x860 light: correct guess reports tries  [Correct after 1 wrong try! It was Aquamarine. Swap roles!]
+PASS 430x860 light: no page scroll (two players)  [{"sw":430,"sh":860,"w":430,"h":860}]
+PASS 430x860 light: 15/15 collected  [15/15]
+PASS 430x860 light: all awards + saved after reload  [★ Gem Finder (3)|★ Gem Explorer (8)|★ Master Jeweler (15)]
+PASS 430x860 light: no JS errors
+PASS 430x860 dark: no page scroll (start)  [{"sw":430,"sh":860,"w":430,"h":860}]
+PASS 430x860 dark: header on one line  [{"oneLine":true,"fit":true}]
+PASS 430x860 dark: touch targets >= 44px
+PASS 430x860 dark: Ruby+Citrine = AMBER  [AMBER]
+PASS 430x860 dark: formula "Ruby + Citrine"  [Ruby + Citrine]
+PASS 430x860 dark: +Sapphire = SMOKY QUARTZ  [SMOKY QUARTZ]
+PASS 430x860 dark: "Smoky quartz" fits result card
+PASS 430x860 dark: all four + Diamond = ONYX  [ONYX]
+PASS 430x860 dark: Diamond hint  [Four layers block almost all light. The Diamond makes it lighter.]
+PASS 430x860 dark: Diamond formula  [Ruby + Citrine + Sapphire + Emerald + Diamond (lighter)]
+PASS 430x860 dark: formula fits result card
+PASS 430x860 dark: no page scroll (5 gems)  [{"sw":430,"sh":860,"w":430,"h":860}]
+PASS 430x860 dark: Clear resets  [TAP A GEM]
+PASS 430x860 dark: Dark emerald  [DARK EMERALD]
+PASS 430x860 dark: "Dark emerald" fits result card
+PASS 430x860 dark: "Dark emerald" + Diamond formula fits
+PASS 430x860 dark: collection counter matches found gems  [7/15 found=7]
+PASS 430x860 dark: Gem Finder award earned  [★ Gem Finder (3)]
+PASS 430x860 dark: Challenge gives a target  [Make Onyx]
+PASS 430x860 dark: Challenge success message  [Yes! You made Onyx!]
+PASS 430x860 dark: no page scroll (challenge)  [{"sw":430,"sh":860,"w":430,"h":860}]
+PASS 430x860 dark: Mystery shows a color
+PASS 430x860 dark: Mystery wrong Check says "Not yet"  [Not yet. Try again!]
+PASS 430x860 dark: Mystery right Check succeeds  [Yes! It is Hematite!]
+PASS 430x860 dark: no page scroll (mystery)  [{"sw":430,"sh":860,"w":430,"h":860}]
+PASS 430x860 dark: Hide with nothing asks to pick  [Pick at least one gem first.]
+PASS 430x860 dark: Hide clears the window
+PASS 430x860 dark: wrong guess counts a try  [Not it. Try again! Wrong tries: 1]
+PASS 430x860 dark: correct guess reports tries  [Correct after 1 wrong try! It was Aquamarine. Swap roles!]
+PASS 430x860 dark: no page scroll (two players)  [{"sw":430,"sh":860,"w":430,"h":860}]
+PASS 430x860 dark: 15/15 collected  [15/15]
+PASS 430x860 dark: all awards + saved after reload  [★ Gem Finder (3)|★ Gem Explorer (8)|★ Master Jeweler (15)]
+PASS 430x860 dark: no JS errors
+PASS storage blocked: still mixes AMETHYST
+
+199 passed, 0 failed
